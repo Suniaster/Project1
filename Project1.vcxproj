@@ -150,13 +150,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\BaseObject.cpp" />
+    <ClCompile Include="src\objects\BaseEntity.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\Vector2d.cpp" />
+    <ClCompile Include="src\common\Vector2d.cpp" />
+    <ClCompile Include="src\views\SfmlView.cpp" />
+    <ClCompile Include="src\world\EntitiesController.cpp" />
+    <ClCompile Include="src\world\WorldController.cpp" />
+    <ClCompile Include="src\world\WorldViewInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\BaseObject.h" />
-    <ClInclude Include="include\Vector2d.h" />
+    <ClInclude Include="include\objects\BaseEntity.h" />
+    <ClInclude Include="include\views\SfmlView.h" />
+    <ClInclude Include="include\world\EntitiesController.h" />
+    <ClInclude Include="include\common\Vector2d.h" />
+    <ClInclude Include="include\world\WorldViewInterface.h" />
+    <ClInclude Include="include\world\WorldController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
