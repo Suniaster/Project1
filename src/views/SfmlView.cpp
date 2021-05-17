@@ -1,12 +1,19 @@
 #include "../../include/views/SfmlView.h"
+#include "../../include/objects/BaseEntity.h"
 
-
-SfmlView::SfmlView(EntitiesController* e):WorldViewInterface(e){
+SfmlView::SfmlView(IEntityContainer* e):IView(e){
     this->window = new sf::RenderWindow(sf::VideoMode(800, 700), "SFML works!");
 }
 
 bool SfmlView::stopWorld() {
 	return !this->window->isOpen();
+}
+
+void SfmlView::renderEntity(IEntity* obj) {
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
+    shape.setPosition(obj->position.x, obj->position.y);
+    window->draw(shape);
 }
 
 void SfmlView::render() {
@@ -18,12 +25,10 @@ void SfmlView::render() {
             window->close();
     }
 
-    for (int i = 0; i < this->objects->size; i++) {
-        BaseEntity* obj = this->objects->container[i];
-        sf::CircleShape shape(100.f);
-        shape.setFillColor(sf::Color::Green);
-        shape.setPosition(obj->position.x, obj->position.y);
-        window->draw(shape);
+    int n_entities = this->entities->getSize();
+    for (int i = 0; i < n_entities; i++) {
+        this->renderEntity(this->entities->getEntity(i));
     }
+
     window->display();
 }

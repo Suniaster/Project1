@@ -3,12 +3,12 @@
 
 class Vector2d{	
 public:
-	Vector2d(float, float);
+	Vector2d(double, double);
 	Vector2d();
-	float x, y;
+	double x, y;
 
 	friend Vector2d operator+(const Vector2d&, const Vector2d&);
-	friend Vector2d operator*(const Vector2d&, const float);
+	friend Vector2d operator*(const Vector2d&, double);
 };
 
 #endif

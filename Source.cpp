@@ -1,18 +1,21 @@
+#include "include/world/VectorContainer.h"
 #include "include/views/SfmlView.h"
-#include "include/world/EntitiesController.h"
-#include "include/world/WorldController.h"
+#include "include/world/BaseEngine.h"
 
-int main()
-{
-    EntitiesController* objs_manager = new EntitiesController();
-    SfmlView* view = new SfmlView(objs_manager);
-    WorldController world(objs_manager, view);
-       
-    objs_manager->addObject(new BaseEntity(Vector2d(0,0)));
+#include "include/interfaces/IWorld.h"
 
-    world.startWorld();
+#include "include/objects/BaseEntity.h"
 
-    delete objs_manager;
-    delete view;
+int main(){
+    VectorContainer container;
+    SfmlView view(&container);
+    BaseEngine engine(&container);
+
+    IWorld test_world(&engine, &view, &container);
+
+    container.addEntity(new BaseEntity(Vector2d(0, 0)));
+
+    test_world.startWorld();
+
     return 0;
 }

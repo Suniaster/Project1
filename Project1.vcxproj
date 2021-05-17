@@ -150,21 +150,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\interfaces\IEntity.cpp" />
+    <ClCompile Include="src\interfaces\IView.cpp" />
+    <ClCompile Include="src\interfaces\IWorld.cpp" />
+    <ClCompile Include="src\interfaces\IWorldEngine.cpp" />
     <ClCompile Include="src\objects\BaseEntity.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\common\Vector2d.cpp" />
     <ClCompile Include="src\views\SfmlView.cpp" />
-    <ClCompile Include="src\world\EntitiesController.cpp" />
-    <ClCompile Include="src\world\WorldController.cpp" />
-    <ClCompile Include="src\world\WorldViewInterface.cpp" />
+    <ClCompile Include="src\world\VectorContainer.cpp" />
+    <ClCompile Include="src\world\BaseEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\interfaces\IEntityContainer.h" />
+    <ClInclude Include="include\interfaces\IView.h" />
+    <ClInclude Include="include\interfaces\IWorld.h" />
+    <ClInclude Include="include\interfaces\IEntity.h" />
+    <ClInclude Include="include\interfaces\IWorldEngine.h" />
     <ClInclude Include="include\objects\BaseEntity.h" />
     <ClInclude Include="include\views\SfmlView.h" />
-    <ClInclude Include="include\world\EntitiesController.h" />
+    <ClInclude Include="include\world\VectorContainer.h" />
     <ClInclude Include="include\common\Vector2d.h" />
-    <ClInclude Include="include\world\WorldViewInterface.h" />
-    <ClInclude Include="include\world\WorldController.h" />
+    <ClInclude Include="include\world\BaseEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
